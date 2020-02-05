@@ -30,6 +30,11 @@ public class UserService {
 		return repo.insert(obj);
 	}
 	
+	public void delete (String id) {
+		findById(id); //este codigo ja esta sendo analisado se existe o codigo, senao existir já trata a excecao
+		repo.deleteById(id);
+	}
+	
 	public User fromDTO(UserDTO objDto) {
 		return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
 	} 
